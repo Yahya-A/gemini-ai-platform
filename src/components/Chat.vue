@@ -16,14 +16,12 @@ const submit = () => {
   if (!data.value.message) return;
   data.value.chats.push({from: 'me', message : data.value.message})
 
-  sentMessage().then(res => {
+  sentMessage(data.value.message).then(res => {
     data.value.chats.push({from: 'ai', message : res.data.data})
   })
   
 
 }
-
-const count = ref(0);
 </script>
 
 <template>
